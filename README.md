@@ -2,6 +2,7 @@
 
 MNIST data for use with deepNN R package (or indeed any other package for that matter!)
 
+```R
 library(deepNN)
 
 download_mnist("mnist.RData")
@@ -18,10 +19,11 @@ netwts <- train(dat=train_set,
                 tol=0.8, # normally would use a higher tol here e.g. 0.95
                 loss=multinomial(),
                 batchsize=100)
-                
+
 pred <- NNpredict(  net=net,
                     param=netwts$opt,
                     newdata=test_set,
                     newtruth=test_truth,
                     record=TRUE,
                     plot=TRUE)
+```
